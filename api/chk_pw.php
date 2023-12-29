@@ -2,6 +2,11 @@
 
 echo $User->count($_POST);
 
+
+if($res){
+    $_SESSION['user']=$_POST['acc'];
+}
+echo $res;
 // $res=$User->count(['acc'=>$_POST['acc'],'pw'=>$_POST['pw']]);
 
 // echo $res;

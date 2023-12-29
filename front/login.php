@@ -10,7 +10,7 @@
             <td><input type="password" name="" id=""></td>
         </tr>
         <tr>
-            <td><input type="submit" value="登入">
+            <td><input type="button" value="登入" onclick="login()">
                 <input type="reset" value="清除">
             </td>
             <td>
@@ -18,5 +18,28 @@
             </td>
         </tr>
     </table>
-
 </fieldset>
+
+<script>
+
+function login(){
+    $.post('./api/back.php',{acc:$('#acc').val()},(res)=>{
+        if(parseInt(res)==0){
+            alert("查無帳號");
+        }else{
+            $.post('/api/chk_pw.php',{acc:$('#acc').val(),pw:$('#pw').val()},(res)=>{
+                if(parseInt(res)==1){
+                    if($('#acc').val()=='admin'){
+                        location.href='back.php'
+                    }else{
+                        location.href='index.php'
+                    }
+                }else{
+                    alert('密碼錯誤');
+                }
+            })
+        }
+    })
+}
+
+</script>

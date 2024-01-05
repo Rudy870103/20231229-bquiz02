@@ -1,6 +1,6 @@
 <?php include_once "./api/db.php"; ?>
 
-<form action="./api/edit_po.php" method="post">
+<form action="./api/edit_news.php" method="post">
     <table style="width:75%;margin:auto;text-align:center">
         <tr>
             <td>編號</td>
@@ -25,6 +25,7 @@
                 </td>
                 <td>
                     <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                    <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                 </td>
             </tr>
         <?php

@@ -21,7 +21,7 @@
 </fieldset>
 <fieldset class="news-list">
     <legend>文章列表</legend>
-    <div class="list-items"></div>
+    <div class="list-items" style="display:none"></div>
     <div class="article"></div>
 </fieldset>
 <script>
@@ -34,11 +34,13 @@ $(".type-item").on('click',function(){
 function getList(type){
     $.get("./api/get_list.php",{type},(list)=>{
         $(".list-items").html(list)
+        $(".article,.list-items").toggle();
     })
 }
 function getNews(id){
     $.get("./api/get_news.php",{id},(news)=>{
-        $(".article").text(news)
+        $(".article").html(news)
+        $(".article,.list-items").toggle();
     })
 }
 </script>

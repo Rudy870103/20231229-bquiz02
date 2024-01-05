@@ -28,12 +28,17 @@
     getList(1)
 $(".type-item").on('click',function(){
     $(".type").text($(this).text())
-    let tyoe=$(this).data('id')
+    let type=$(this).data('id')
     getList(type)
 })
 function getList(type){
     $.get("./api/get_list.php",{type},(list)=>{
         $(".list-items").html(list)
+    })
+}
+function getNews(id){
+    $.get("./api/get_news.php",{id},(news)=>{
+        $(".article").text(news)
     })
 }
 </script>

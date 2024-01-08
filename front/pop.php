@@ -75,9 +75,5 @@
         }
     )
 
-    function good(news){
-        $.post("./api/good.php",{news},()=>{
-            location.reload();
-        })
-    }
+    
 </script>

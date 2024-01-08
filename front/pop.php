@@ -16,8 +16,16 @@
         foreach ($rows as $row) {
         ?>
             <tr>
-                <td><?= $row['title']; ?></td>
-                <td><?= mb_substr($row['news'], 0, 25); ?>...</td>
+                <td>
+                    <div class="title" data-id="<?= $row['id']; ?>"><?= $row['title']; ?></div>
+                </td>
+                <td style="position: relative;">
+                    <div><?= mb_substr($row['news'], 0, 25); ?>...</div>
+                    <div id="p<?= $row['id']; ?>" class="pop">
+                        <h3 style="color:aqua"><?=$row['title'];?></h3>
+                    <pre><?= $row['news']; ?></pre>
+                    </div>
+                </td>
                 <td></td>
             </tr>
         <?php
@@ -46,3 +54,12 @@
         }
         ?>
 </fieldset>
+<script>
+    $(".title").hover(
+        function() {
+            $(".pop").hide();
+            let id = $(this).data("id");
+            $("#p" + id).show();
+        }
+    )
+</script>

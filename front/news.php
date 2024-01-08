@@ -4,7 +4,7 @@
         <tr>
             <th width="30%">標題</th>
             <th width="50%">內容</th>
-            <th>人氣</th>
+            <th></th>
         </tr>
         <?php
         $total = $News->count();

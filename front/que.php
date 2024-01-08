@@ -13,7 +13,7 @@
         $ques=$Que->all(['subject_id'=>0]);
         foreach($ques as $key => $que){
         ?>
-        <tr>
+        <tr style="height:30px">
             <td><?=$key+1;?></td>
             <td><?=$que['text'];?></td>
             <td><?=$que['vote'];?></td>

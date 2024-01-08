@@ -9,7 +9,7 @@ $que = $Que->find($_GET['id']);
 
         $opts=$Que->all(['subject_id'=>$_GET['id']]);
         foreach($opts as $opt){
-            echo "<div>";
+            echo "<div style='margin-bottom:10px'>";
             echo "<input type='radio' name='opt' value='{$opt['id']}'>";
             echo $opt['text'];
             echo "</div>";
